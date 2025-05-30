@@ -1,0 +1,102 @@
+{% load static %}
+<!-- HEADER -->
+<header>
+    <!-- TOP HEADER -->
+    <div id="top-header">
+        <div class="container">
+            <ul class="header-links pull-left">
+                <li><a href="#"><i class="fa fa-phone"></i>8-800-000-00-00  </a></li>
+                <li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+            </ul>
+            <ul class="header-links pull-right">
+                <li class="payment"><a>Доставка и оплата <i class="fa fa-angle-down"></i></a>
+                    <ul class="dropdown_payment">
+                        <li><a href="#">Доставка курьером</a></li>
+                        <li><a href="#">Доставка транспортной компанией</a></li>
+                        <li><a href="#">Самовывоз</a></li>
+                        <li><a href="#">Способ оплаты</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"> Сервис и поддержка</a></li>
+                <li class="about"><a> О нас <i class="fa fa-angle-down"></i></a>
+                    <ul class="dropdown_about">
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Реквизиты</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- /TOP HEADER -->
+
+    <!-- MAIN HEADER -->
+    <div id="header">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <!-- LOGO -->
+                <div class="col-md-3">
+                    <div class="header-logo">
+                        <a href="#" class="logo">
+                            <img src="{% static 'assets/img/main.svg' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+                <!-- /LOGO -->
+
+                <!-- SEARCH BAR -->
+                <div class="col-md-5">
+                    <div class="header-search">
+                        <form>
+                            <input class="input" placeholder="Искать товары">
+                            <button class="search-btn">Поиск</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- /SEARCH BAR -->
+
+                <!-- ACCOUNT -->
+                <div class="col-md-4">
+                    <div class="header-ctn">
+                        <!-- Wishlist -->
+                        <div>
+                            <a href="#">
+                                <i class="fa fa-heart-o"></i>
+                                <span>Избранное</span>
+                                <div class="qty">2</div>
+                            </a>
+                        </div>
+                        <!-- /Wishlist -->
+
+                        <!-- Cart -->
+                        {% include 'cart.html' %}
+                        <!-- /Cart -->
+
+                        <!-- Profile -->
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                <i class="fa fa-user-o"></i>
+                                <span>Профиль</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <i class="fa fa-user-o"></i>
+                                <span>Войти</span>
+                            </a>
+                        </div>
+                        
+                        <!-- /Profile -->
+                    </div>
+                </div>
+                <!-- /ACCOUNT -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- /MAIN HEADER -->
+</header>
+<!-- /HEADER -->

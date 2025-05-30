@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<title>GadgetHub - HTML Ecommerce Template</title>
+        
+		<!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/favicon/icon-16x16.png' %}">
+
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}"/>
+		<link rel="stylesheet" href="{% static 'assets/css/bundle.css' %}">
+		<!-- Slick -->
+		<link type="text/css" rel="stylesheet" href="{% static 'assets/css/slick.css' %}"/>
+		<link type="text/css" rel="stylesheet" href="{% static 'assets/css/slick-theme.css' %}"/>
+
+		<!-- nouislider -->
+		<link type="text/css" rel="stylesheet" href="{% static 'assets/css/nouislider.min.css' %}"/>
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
+
+        
+        <link rel="stylesheet" href="{% static 'assets/css/plugins.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+        <script src="{% static 'assets/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+		<!-- Custom stlylesheet -->
+		 
+		<link type="text/css" rel="stylesheet" href="{% static 'assets/css/cart.css' %}"/>
+		<link type="text/css" rel="stylesheet" href="{% static 'assets/css/style.css' %}"/>
+
+
+    </head>
+	<body>
+		<!-- HEADER -->
+		{% include 'includes/header.html' %} 
+        <!-- Footer -->
+        {% include 'includes/footer.html' %} 
+        <!-- Scripts -->
+        <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+		<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'assets/js/slick.min.js' %}"></script>
+		<script src="{% static 'assets/js/nouislider.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.zoom.min.js' %}"></script>
+		<script src="{% static 'assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
+        <script src="{% static 'assets/js/popper.js' %}"></script>
+        <script src="{% static 'assets/js/plugins.js' %}"></script>
+		<script src="{% static 'assets/js/other.js' %}"></script>
+		<script src="{% static 'assets/js/main.js' %}"></script>
+    </body>
+</html>

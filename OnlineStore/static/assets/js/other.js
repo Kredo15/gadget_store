@@ -602,16 +602,16 @@
     new WOW().init();
     
       /*------addClass/removeClass -------*/
-    $(".currency > a,.language > a,.top_links > a").on("click", function() {
+    $(".payment > a,.about > a").on("click", function() {
         $(this).removeAttr('href');
-        $(this).toggleClass('open').next('.dropdown_currency,.dropdown_language,.dropdown_links').toggleClass('open');
-        $(this).parents().siblings().find('.dropdown_currency,.dropdown_language,.dropdown_links').removeClass('open');
+        $(this).toggleClass('open').next('.dropdown_payment,.dropdown_about').toggleClass('open');
+        $(this).parents().siblings().find('.dropdown_payment,.dropdown_about').removeClass('open');
     });
 
     $('body').on('click', function (e) {
         var target = e.target;
-        if (!$(target).is('.currency > a,.language > a,.top_links > a') ) {
-            $('.dropdown_currency,.dropdown_language,.dropdown_links').removeClass('open');
+        if (!$(target).is('.payment > a,.about > a') ) {
+            $('.dropdown_payment,.dropdown_about').removeClass('open');
         }
     });
     

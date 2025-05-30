@@ -1,0 +1,71 @@
+<div class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+        <i class="fa fa-shopping-cart"></i>
+        <span>Корзина</span>
+        <div class="qty">3</div>
+    </a>
+    <div class="cart-dropdown">
+        <div class="header__cart-body">
+            <ul class="cart__list">
+                {% for cart in carts %}
+                    <li>
+                        <div class="cart__item">
+                            <a href="#" class="cart__item-image">
+                                <img src="">
+                            </a>
+                            <div class="cart__item-desc">
+                                <span class="cart__item-id">{{ cart.id }}</span>
+                                <a href="assets/img/product01.png" class="cart__item-title">{{ cart.title }}</a>
+                            </div>
+                            <div class="cart__item-number">
+                                <div class="ui-number">
+                                    <input class="ui-number__input" type="number" name="quantity[64125]" min="0" max="9999" value="1">
+                                    <button class="ui-number__decrease">
+                                        <i class="fa fa-chevron-left"></i>
+                                    </button>
+                                    <button class="ui-number__increase">
+                                        <i class="fa fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="cart__item-price">
+                                {{ cart.price }}
+                                <small class="cart__item-price-piece">&nbsp;&nbsp;&nbsp;{{ cart.title }} ₽ / шт.</small>
+                            </div>
+                            <div class="cart__item-action js-action">
+                                <button class="cart__item-action-toggle js-action-toggle">
+                                    <svg class="icon-dots"><use xlink:href="catalog/view/theme/prostore/sprites/sprite.svg#icon-dots"></use>
+                                    </svg>
+                                </button>
+                                
+                            </div>
+                            <button class="delete">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="header__cart-data">
+                <span class="header__cart-data-title">Стоимость</span>
+                <table class="header__cart-data-table">
+                    <tbody>
+                        <tr>
+                            <td class="">Итого</td>
+                            <td class="text-right ">{{ carts.total_quantity }} ₽</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Всего</td>
+                            <td class="text-right">{{ carts.total_quantity }} ₽</td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <div class="header__cart-data-action">
+                    <a class="ui-btn ui-btn--60 ui-btn--primary ui-btn--fullwidth" href="#">Оформление заказа</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
