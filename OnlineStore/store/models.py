@@ -64,7 +64,7 @@ class Models(models.Model):
         return f'{self.brand} {self.name}'
 
 
-class Item(models.Model):
+class Items(models.Model):
     title = models.CharField(
         max_length=200, 
         verbose_name='Название',
