@@ -7,7 +7,7 @@ def get_promotion_items():
     return promo_items
 
 
-def get_items_details(item_slug: srt) -> dict:
+def get_items_details(item_slug: str) -> dict:
     item = get_object_or_404(Items, slug=item_slug)
     context = {
         'item': item,

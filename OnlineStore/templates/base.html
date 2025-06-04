@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-		<title>GadgetHub - HTML Ecommerce Template</title>
+		<title>{% block title %}{% endblock %}</title>
         
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/favicon/icon-16x16.png' %}">
@@ -43,7 +43,12 @@
 		<!-- HEADER -->
 		{% include 'includes/header.html' %}
 		<!-- NAVIGATION -->
-		 
+		{% include 'includes/navigator.html' %}
+
+
+		{% block content %}{% endblock %}
+
+
         <!-- Footer -->
         {% include 'includes/footer.html' %} 
         <!-- Scripts -->

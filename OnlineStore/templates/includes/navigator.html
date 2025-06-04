@@ -1,3 +1,5 @@
+{% load static %}
+
 <nav id="navigation">
     <!-- container -->
     <div class="container">
@@ -14,7 +16,7 @@
                                     {% if category.children.all %}
                                         <ul class="categories_mega_menu">
                                             {% for subcategory in category.children.all %}
-                                                <li><a href="{% url 'catalog:index' subcategory.slug %}">subcategory.name</a>
+                                                <li><a href="{% url 'catalog:index' subcategory.slug %}">{{ subcategory.name }}</a>
                                                     {% if subcategory.children.all %}
                                                         <div class="categorie_sub_menu">
                                                             <ul>
@@ -26,144 +28,10 @@
                                                     {% endif %}
                                                 </li>
                                             {% endfor %}
-                                            <li><a href="#">Laptop & Computers</a>
-                                                <div class="categorie_sub_menu">
-                                                    <ul>
-                                                        <li><a href="">Digital Cameras</a></li>
-                                                        <li><a href="">Camcorders</a></li>
-                                                        <li><a href="">Photo Accessories</a></li>
-                                                        <li><a href="">Memory Cards</a></li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <li><a href="#">Camera & Photos</a>
-                                                <div class="categorie_sub_menu">
-                                                    <ul>
-                                                        <li><a href="">Apple Phones</a></li>
-                                                        <li><a href="">Samsung Phones</a></li>
-                                                        <li><a href="">Motorola Phones</a></li>
-                                                        <li><a href="">Lenovo Phones</a></li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <li><img src="assets/img/categorie/categorie.png" alt=""></li>
                                         </ul>
+                                    {% endif %}
                                 </li>
-                            <li><a href="#">Смартфоны и гаджеты<i class="fa fa-angle-right"></i></a>
-                                <ul class="categories_mega_menu">
-                                    <li><a href="#">Dresses</a>
-                                        <div class="categorie_sub_menu">
-                                            <ul>
-                                                <li><a href="">Sweater</a></li>
-                                                <li><a href="">Evening</a></li>
-                                                <li><a href="">Day</a></li>
-                                                <li><a href="">Sports</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li><a href="#">Handbags</a>
-                                        <div class="categorie_sub_menu">
-                                            <ul>
-                                                <li><a href="">Shoulder</a></li>
-                                                <li><a href="">Satchels</a></li>
-                                                <li><a href="">kids</a></li>
-                                                <li><a href="">coats</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li><a href="#">shoes</a>
-                                        <div class="categorie_sub_menu">
-                                            <ul>
-                                                <li><a href="">Ankle Boots</a></li>
-                                                <li><a href="">Clog sandals </a></li>
-                                                <li><a href="">run</a></li>
-                                                <li><a href="">Books</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li><a href="#">Clothing</a>
-                                        <div class="categorie_sub_menu">
-                                            <ul>
-                                                <li><a href="">Coats  Jackets </a></li>
-                                                <li><a href="">Raincoats</a></li>
-                                                <li><a href="">Jackets</a></li>
-                                                <li><a href="">T-shirts</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                            </li>
-                            <li><a href="#"> Furnitured & Decor <i class="fa fa-angle-right"></i></a>
-                                <ul class="categories_mega_menu column_3">
-                                    <li><a href="#">Chair</a>
-                                        <div class="categorie_sub_menu">
-                                            <ul>
-                                                <li><a href="">Dining room</a></li>
-                                                <li><a href="">bedroom</a></li>
-                                                <li><a href=""> Home & Office</a></li>
-                                                <li><a href="">living room</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li><a href="#">Lighting</a>
-                                        <div class="categorie_sub_menu">
-                                            <ul>
-                                                <li><a href="">Ceiling Lighting</a></li>
-                                                <li><a href="">Wall Lighting</a></li>
-                                                <li><a href="">Outdoor Lighting</a></li>
-                                                <li><a href="">Smart Lighting</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li><a href="#">Sofa</a>
-                                        <div class="categorie_sub_menu">
-                                            <ul>
-                                                <li><a href="">Fabric Sofas</a></li>
-                                                <li><a href="">Leather Sofas</a></li>
-                                                <li><a href="">Corner Sofas</a></li>
-                                                <li><a href="">Sofa Beds</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="#"> Toys & Hobbies <i class="fa fa-angle-right"></i></a>
-                                <ul class="categories_mega_menu column_2">
-                                    <li><a href="#">Boys' Toys</a>
-                                        <div class="categorie_sub_menu">
-                                            <ul>
-                                                <li><a href="">Building Toys</a></li>
-                                                <li><a href="">Electronics Toys</a></li>
-                                                <li><a href="">action figures </a></li>
-                                                <li><a href="">specialty & boutique toy</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li><a href="#">Girls' Toys</a>
-                                        <div class="categorie_sub_menu">
-                                            <ul>
-                                                <li><a href="">Dolls for Girls</a></li>
-                                                <li><a href="">Girls' Learning Toys</a></li>
-                                                <li><a href="">Arts and Crafts for Girls</a></li>
-                                                <li><a href="">Video Games for Girls</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                            </li>
-                            <li><a href="#"> Accessories</a></li>
-                            <li><a href="#"> Jewelry & Watches</a></li>
-                            <li><a href="#"> Health & Beauty</a></li>
-                            <li><a href="#">Books & Office</a></li>
-                            <li><a href="#"> Sport & Outdoor</a></li>
-                            <li id="cat_toggle" class="has-sub"><a href="#"> More Categories</a>
-                                <ul class="categorie_sub">
-                                    <li><a href="#"> Computer - Laptop</a></li>
-                                </ul>   
-
-                            </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
@@ -173,12 +41,12 @@
                     <!-- NAV -->
                     <ul class="main-nav nav navbar-nav">
                         <li><a href="#"><i class="fa fa-percent"></i>  Акции</a></li>
-                        <li><a href="#">Hot Deals</a></li>
-                        <li><a href="#">Categories</a></li>
-                        <li><a href="#">Laptops</a></li>
-                        <li><a href="#">Smartphones</a></li>
-                        <li><a href="#">Cameras</a></li>
-                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Новинки</a></li>
+                        <li><a href="#">Бренды</a></li>
+                        <li><a href="#">Смартфоны</a></li>
+                        <li><a href="#">Ноутбуки</a></li>
+                        <li><a href="#">Аксесуары</a></li>
+                        <li><a href="#">Аудиотехника</a></li>
                     </ul>
                     <!-- /NAV -->
                 </div>

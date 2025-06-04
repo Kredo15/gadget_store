@@ -1,11 +1,16 @@
 from django.contrib import admin
-from models import Item, Categories, Characteristics, \
+from mptt.admin import MPTTModelAdmin
+from models import Items, Categories, Characteristics, \
     Brands, Models, Review, ItemCharacteristics, Promotion, \
     ItemPromotion
 
-# Register your models here.
-admin.site.register(Item)
-admin.site.register(Categories)
+
+@admin.register(Categories)
+class CategoriesAdmin(MPTTModelAdmin):
+    prepopulated_fields = {"slug": ("name",)}
+
+
+admin.site.register(Items)
 admin.site.register(Characteristics)
 admin.site.register(Brands)
 admin.site.register(Models)

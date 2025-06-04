@@ -1,8 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
+from mptt.models import TreeForeignKey, MPTTModel
 
 
-class Categories(models.Model):
+class Categories(MPTTModel):
     name = models.CharField(
         max_length=255,
         verbose_name='Категория',
@@ -11,7 +12,7 @@ class Categories(models.Model):
         blank=True, 
         verbose_name="Описание"
     )
-    parent_category = models.ForeignKey(
+    parent_category = TreeForeignKey(
         'self',
         null=True, 
         blank=True, 
@@ -25,6 +26,9 @@ class Categories(models.Model):
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
         ordering = ('-id',)
+
+    class MPTTMeta:
+        order_insertion_by = ['name']
 
     def __str__(self):
         return self.name
@@ -85,6 +89,9 @@ class Items(models.Model):
         decimal_places=2,
         verbose_name='Цена',
     )
+    stock_quantity = models.IntegerField(
+        verbose_name='Количество'
+    )
     image = models.ImageField(
         verbose_name='Изображение',
         upload_to='items/',
@@ -129,12 +136,12 @@ class Characteristics(models.Model):
 
 class ItemCharacteristics(models.Model):
     item = models.ForeignKey(
-        Item,
+        Items,
         on_delete=models.PROTECT,
         verbose_name='Товар',
     )
     characteristics = models.ForeignKey(
-        Item,
+        Items,
         on_delete=models.PROTECT,
         verbose_name='Характеристика',
     )
@@ -180,7 +187,7 @@ class Promotion(models.Model):
 
 class ItemPromotion(models.Model):
     item = models.ForeignKey(
-        Item, 
+        Items, 
         on_delete=models.CASCADE, 
         verbose_name = 'Товар')
     promotion = models.ForeignKey(
@@ -196,7 +203,7 @@ class ItemPromotion(models.Model):
 
 class Review(models.Model):
     product = models.ForeignKey(
-        Item,
+        Items,
         related_name='reviews',
         on_delete=models.PROTECT,
         verbose_name='Товар'
