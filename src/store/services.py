@@ -1,4 +1,4 @@
-from models import ItemPromotion, Items
+from store.models import ItemPromotion, Items
 from django.shortcuts import get_object_or_404
 
 

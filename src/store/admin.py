@@ -1,6 +1,6 @@
 from django.contrib import admin
 from mptt.admin import MPTTModelAdmin
-from models import Items, Categories, Characteristics, \
+from store.models import Items, Categories, Characteristics, \
     Brands, Models, Review, ItemCharacteristics, Promotion, \
     ItemPromotion
 

@@ -118,7 +118,7 @@ class Items(models.Model):
         return self.title
 
     class Meta:
-        ordering = ['-price']
+        ordering = ['-pub_date']
         verbose_name = 'Товар'
         verbose_name_plural = 'Товары'
 
@@ -141,7 +141,7 @@ class ItemCharacteristics(models.Model):
         verbose_name='Товар',
     )
     characteristics = models.ForeignKey(
-        Items,
+        Characteristics,
         on_delete=models.PROTECT,
         verbose_name='Характеристика',
     )
@@ -166,6 +166,8 @@ class Promotion(models.Model):
         verbose_name='Дата окончания',
     )
     discount_value = models.DecimalField(
+        max_digits=5, 
+        decimal_places=2,
         verbose_name='Значение скидки',
     )
     conditions = models.TextField(
@@ -187,8 +189,9 @@ class Promotion(models.Model):
 
 class ItemPromotion(models.Model):
     item = models.ForeignKey(
-        Items, 
-        on_delete=models.CASCADE, 
+        Items,
+        on_delete=models.CASCADE,
+        related_name='promo',
         verbose_name = 'Товар')
     promotion = models.ForeignKey(
         Promotion, 
@@ -210,6 +213,7 @@ class Review(models.Model):
     )
     user = models.ForeignKey(
         User,
+        on_delete=models.PROTECT,
         verbose_name='Имя',
     )
     rating = models.PositiveSmallIntegerField(
