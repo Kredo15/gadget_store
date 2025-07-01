@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView
-from store.models import ItemPromotion, Items
 from store.services import get_promotion_items, get_items_details
 
 

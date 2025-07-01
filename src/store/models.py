@@ -133,6 +133,10 @@ class Characteristics(models.Model):
         verbose_name='Тип',
     )
 
+    class Meta:
+        verbose_name = 'Характеристика'
+        verbose_name_plural = 'Характеристики'
+
 
 class ItemCharacteristics(models.Model):
     item = models.ForeignKey(
@@ -149,6 +153,10 @@ class ItemCharacteristics(models.Model):
         max_length=255,
         verbose_name='Значение',
     )
+
+    class Meta:
+        verbose_name = 'Характеристики товара'
+        verbose_name_plural = 'Характеристики товаров'
 
 
 class Promotion(models.Model):
